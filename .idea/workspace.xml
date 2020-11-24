@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e048639-dedc-494c-9658-8daa77f0c412" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +23,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../crawling_team" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -69,7 +69,8 @@
       <option name="presentableId" value="Default" />
       <updated>1606069508044</updated>
       <workItem from="1606069512842" duration="83000" />
-      <workItem from="1606133090056" duration="11906000" />
+      <workItem from="1606133090056" duration="12059000" />
+      <workItem from="1606206312282" duration="4203000" />
     </task>
     <servers />
   </component>
@@ -77,6 +78,14 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1015" y="193" key="#Deployment" timestamp="1606207662888">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1015" y="193" key="#Deployment/0.0.1920.1080@0.0.1920.1080" timestamp="1606207662888" />
+    <state x="999" y="180" key="#SSH_Configurations" timestamp="1606207650006">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="999" y="180" key="#SSH_Configurations/0.0.1920.1080@0.0.1920.1080" timestamp="1606207650006" />
     <state x="1172" y="340" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606150502218">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -85,35 +94,25 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1220" y="294" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1606145207804" />
-    <state width="914" height="292" key="GridCell.Tab.0.bottom" timestamp="1606150028761">
+    <state width="914" height="292" key="GridCell.Tab.0.bottom" timestamp="1606220347201">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="914" height="292" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1606150028761" />
-    <state width="914" height="292" key="GridCell.Tab.0.center" timestamp="1606150028761">
+    <state width="914" height="292" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1606220347201" />
+    <state width="914" height="292" key="GridCell.Tab.0.center" timestamp="1606220347201">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="914" height="292" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1606150028761" />
-    <state width="914" height="292" key="GridCell.Tab.0.left" timestamp="1606150028760">
+    <state width="914" height="292" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1606220347201" />
+    <state width="914" height="292" key="GridCell.Tab.0.left" timestamp="1606220347201">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="914" height="292" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1606150028760" />
-    <state width="914" height="292" key="GridCell.Tab.0.right" timestamp="1606150028761">
+    <state width="914" height="292" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1606220347201" />
+    <state width="914" height="292" key="GridCell.Tab.0.right" timestamp="1606220347201">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="914" height="292" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1606150028761" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>70</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state width="914" height="292" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1606220347201" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Crawling_covid19$main.coverage" NAME="main Coverage Results" MODIFIED="1606220284520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/crawling_covid19$main.coverage" NAME="main Coverage Results" MODIFIED="1606149954682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

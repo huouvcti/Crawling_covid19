@@ -16,8 +16,17 @@ conn = pymysql.connect(
     db = "crawling_covid19",
     charset = "utf8"
 )
-curs = conn.cursor()
+'''
+conn = pymysql.connect(
+    host= "huouvcti.cafe24.com",
+    user = "huouvcti",
+    password = "nagyeong01@",
+    db = "huouvcti",
+    charset = "utf8"
+)
+'''
 
+curs = conn.cursor()
 
 
 def COVID_CHART():
@@ -45,8 +54,8 @@ def COVID_CHART():
         curs.execute(sql)
         conn.commit()
     '''
-    x = []
-    y = []
+    # x = []
+    # y = []
     for i in range(len(city)):
         sql = "UPDATE `covid_chart`" \
                       "SET `일일확진자`='%s', `총확진자`='%s', `격리중`='%s', `격리해제`='%s', `사망자`='%s'" \
@@ -54,12 +63,13 @@ def COVID_CHART():
                       "" % (day_confirmed[i].text, total_confirmed[i].text, total_isolation[i].text,
                             total_n_isolation[i].text, total_death[i].text,
                             city[i].text)
-        if (i >= 1 and i < len(city) - 1):
-            x.append(int(total_confirmed[i].text.replace(",", "")))
-            y.append(city[i].text)
+        # if (i >= 1 and i < len(city) - 1):
+        #     x.append(int(total_confirmed[i].text.replace(",", "")))
+        #     y.append(city[i].text)
         curs.execute(sql)
         conn.commit()
 
+    '''
     x.reverse()
     y.reverse()
     plt.figure(figsize=(20, 15))
@@ -68,8 +78,8 @@ def COVID_CHART():
     plt.ylabel("시도명")
     for a, b in zip(x, y):
         plt.text(a, b, str(a), fontsize=20, horizontalalignment='left', verticalalignment='center')
-    plt.savefig("C:/Bitnami/wampstack-7.1.16-0/apache2/htdocs/crawling_covid19/covid_graph.png")
-
+    lt.savefig("C:/Bitnami/wampstack-7.1.16-0/apache2/htdocs/crawling_covid19/covid_graph.png")
+    '''
 
 def COVID_MESSAGE():
 
@@ -103,7 +113,6 @@ def COVID_MESSAGE():
         conn.commit()
 
         driver.find_element_by_id("bbs_gubun").click()
-
 
 
 
