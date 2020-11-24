@@ -93,7 +93,7 @@ def COVID_MESSAGE():
 
         date = soup.find("h3", {"id": "sj"}).text.split()[0]
         time = soup.find("h3", {"id": "sj"}).text.split()[1]
-        contents = (soup.find("div", {"id": "cn"}).text.split("-송출지역-")[0])[0:300]
+        contents = (soup.find("div", {"id": "cn"}).text.split("-송출지역-")[0])[0:300].replace("\'", "\\'")
 
         '''
         # INSERT
@@ -113,12 +113,66 @@ def COVID_MESSAGE():
 
         driver.find_element_by_id("bbs_gubun").click()
 
+def COVID_NEWS():
+    def NEWS_INSERT(title, href):
+        sql = "INSERT INTO `covid_news`(`제목`, `링크`)" \
+              "VALUES('%s', '%s');" \
+              "" % (title, href)
+        curs.execute(sql)
+        conn.commit()
+    def NEWS_UPDATE(title, href, k):
+        sql = "UPDATE `covid_news`" \
+              "SET `제목`='%s', `링크`='%s'" \
+              "WHERE `covid_news`.`no`='%d';" \
+              "" % (title, href, k)
+        curs.execute(sql)
+        conn.commit()
+
+    # Naver
+    naver_news_url = "https://search.naver.com/search.naver?where=news&query=코로나"
+    driver.get(naver_news_url)
+    html = driver.page_source
+    soup = bs(html, "html.parser")
+    title_list = soup.find_all("a", {"class": "news_tit"})
+    for i in range(10):
+        href = title_list[i]["href"]
+        title = title_list[i]["title"].replace("\'", "\\'")
+        #NEWS_INSERT(title, href)
+        NEWS_UPDATE(title, href, i+i)
+
+    # Daum
+    daum_news_url = "https://search.daum.net/search?w=news&q=코로나"
+    driver.get(daum_news_url)
+    html = driver.page_source
+    soup = bs(html, "html.parser")
+    title_list = soup.find_all("a", {"class": "f_link_b"})
+    for i in range(10):
+        href = title_list[i]["href"]
+        title = title_list[i].text.replace("\'", "\\'")
+        #NEWS_INSERT(title, href)
+        NEWS_UPDATE(title, href, i+11)
+
+    # Google
+    google_news_url = "https://www.google.com/search?q=covid-19&hl=en&source=lnms&tbm=nws"
+    driver.get(google_news_url)
+    html = driver.page_source
+    soup = bs(html, "html.parser")
+    href_list = soup.select("div.dbsr a")
+    title_list = soup.find_all("div", {"class": "JheGif nDgy9d"})
+    for i in range(10):
+        href = href_list[i]["href"]
+        title = title_list[i].text.replace("\n", "").replace("\'", "\\'")
+        #NEWS_INSERT(title, href)
+        NEWS_UPDATE(title, href, i+21)
+
+
 
 
 
 
 COVID_CHART()
 COVID_MESSAGE()
+COVID_NEWS()
 
 driver.close()
 
