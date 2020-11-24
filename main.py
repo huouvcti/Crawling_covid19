@@ -82,13 +82,12 @@ def COVID_CHART():
     '''
 
 def COVID_MESSAGE():
-
     message_url = "https://www.safekorea.go.kr/idsiSFK/neo/sfk/cs/sfc/dis/disasterMsgList.jsp?menuSeq=679"
 
     driver.get(message_url)
     driver.find_element_by_id("bbs_tr_0_bbs_title").click()
 
-    for i in range(10):
+    for i in range(20):
         html = driver.page_source
         soup = bs(html, "html.parser")
 
@@ -104,7 +103,7 @@ def COVID_MESSAGE():
         curs.execute(sql)
         conn.commit()
         '''
-
+        
         sql = "UPDATE `covid_message`" \
               "SET `날짜`='%s', `시간`='%s', `내용`='%s'" \
               "WHERE `covid_message`.`no`='%d';" \
