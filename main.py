@@ -7,7 +7,9 @@ from matplotlib import font_manager, rc
 font_name = font_manager.FontProperties(fname="c:/Windows/Fonts/malgun.ttf").get_name()
 rc('font', family=font_name, size=30)
 
-driver = webdriver.Chrome(executable_path="chromedriver.exe")
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("headless")
+driver = webdriver.Chrome(executable_path="chromedriver.exe", options=chrome_options)
 '''
 conn = pymysql.connect(
     host= "localhost",
@@ -92,6 +94,7 @@ def COVID_MESSAGE():
         html = driver.page_source
         soup = bs(html, "html.parser")
 
+        sleep(2)
         date = soup.find("h3", {"id": "sj"}).text.split()[0]
         time = soup.find("h3", {"id": "sj"}).text.split()[1]
         contents = (soup.find("div", {"id": "cn"}).text.split("-송출지역-")[0])[0:300].replace("\'", "\\'")
@@ -175,7 +178,7 @@ COVID_CHART()
 COVID_MESSAGE()
 COVID_NEWS()
 
-driver.close()
+driver.quit()
 
 
 
