@@ -1,6 +1,6 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup as bs
-import time
+from time import *
 import pymysql
 from matplotlib import pyplot as plt
 from matplotlib import font_manager, rc
@@ -8,7 +8,7 @@ font_name = font_manager.FontProperties(fname="c:/Windows/Fonts/malgun.ttf").get
 rc('font', family=font_name, size=30)
 
 driver = webdriver.Chrome(executable_path="chromedriver.exe")
-
+'''
 conn = pymysql.connect(
     host= "localhost",
     user = "root",
@@ -24,7 +24,7 @@ conn = pymysql.connect(
     db = "huouvcti",
     charset = "utf8"
 )
-'''
+
 
 curs = conn.cursor()
 
@@ -85,6 +85,7 @@ def COVID_MESSAGE():
     message_url = "https://www.safekorea.go.kr/idsiSFK/neo/sfk/cs/sfc/dis/disasterMsgList.jsp?menuSeq=679"
 
     driver.get(message_url)
+    sleep(2)
     driver.find_element_by_id("bbs_tr_0_bbs_title").click()
 
     for i in range(20):
@@ -138,7 +139,7 @@ def COVID_NEWS():
         href = title_list[i]["href"]
         title = title_list[i]["title"].replace("\'", "\\'")
         #NEWS_INSERT(title, href)
-        NEWS_UPDATE(title, href, i+i)
+        NEWS_UPDATE(title, href, i+1)
 
     # Daum
     daum_news_url = "https://search.daum.net/search?w=news&q=코로나"
